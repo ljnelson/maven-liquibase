@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?><!-- $Id: pom.xml 336 2011-02-26 22:20:22Z ljnelson $ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Xlint="urn:javac" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0.5</maven>
+  </prerequisites>
+
+  <groupId>com.edugility</groupId>
+  <artifactId>maven-liquibase</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>com.edugility</groupId>
+    <artifactId>edugility-oss-pluginmanagement-pom</artifactId>
+    <version>4</version>
+  </parent>
+
+  <name>Maven Liquibase Utilities</name>
+  <description>Maven Liquibase Utilities</description>
+  <inceptionYear>2014</inceptionYear>
+  <url>http://ljnelson.github.com/${project.artifactId}/</url>
+
+  <scm>
+    <connection>scm:git:git@github.com:ljnelson/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:ljnelson/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/ljnelson/${project.artifactId}/</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>com.edugility</groupId>
+        <artifactId>artifact-maven-plugin</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-core</artifactId>
+        <version>3.2.2</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mvel</groupId>
+        <artifactId>mvel2</artifactId>
+        <version>2.2.2.Final</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.edugility</groupId>
+      <artifactId>artifact-maven-plugin</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mvel</groupId>
+      <artifactId>mvel2</artifactId>
+    </dependency>
+    
+    <!-- Test-scoped dependencies -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <properties>
+
+    <!-- maven-javadoc-plugin properties -->
+    <links>http://junit.org/javadoc/4.10/</links>
+
+  </properties>
+
+  <reporting>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${mavenJavadocPluginVersion}</version>
+      </plugin>
+
+    </plugins>
+  </reporting>
+
+</project>
