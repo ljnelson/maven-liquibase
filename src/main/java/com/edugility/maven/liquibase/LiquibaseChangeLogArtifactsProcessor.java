@@ -237,7 +237,7 @@ public class LiquibaseChangeLogArtifactsProcessor implements ArtifactsProcessor 
       final Collection<? extends String> names = this.getChangeLogResourceNames();
       if (names != null && !names.isEmpty()) {
         for (final Artifact artifact : artifacts) {
-          if (artifact != null && artifact.isResolved()) {
+          if (artifact != null && artifact.isResolved() && (project == null || !artifact.equals(project.getArtifact()))) {
             final File artifactFile = artifact.getFile();
             if (artifactFile != null && artifactFile.canRead()) {
               for (final String name : names) {
