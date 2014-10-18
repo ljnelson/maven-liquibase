@@ -30,10 +30,12 @@ package com.edugility.maven.liquibase;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 import java.net.URL;
 
@@ -47,16 +49,32 @@ import org.mvel2.templates.TemplateCompiler;
 import org.mvel2.templates.TemplateRuntime;
 
 /**
- * A generator that creates a Liquibase changelog file with {@code
- * <include>} elements inside it referencing other Liquibase changelog
- * fragments.
+ * A generator that creates a <a
+ * href="http://www.liquibase.org/">Liquibase</a> <a
+ * href="http://www.liquibase.org/documentation/databasechangelog.html">changelog
+ * file</a> with <a
+ * href="http://www.liquibase.org/documentation/include.html">{@code
+ * <include>} elements</a> inside it referencing other Liquibase
+ * changelog fragments.
  *
- * <p>This class is chiefly for use by a {@link LiquibaseChangeLogArtifactsProcessor}.</p>
+ * <p>This class is chiefly for use by a {@link
+ * LiquibaseChangeLogArtifactsProcessor}.</p>
  *
  * @author <a href="http://about.me/lairdnelson"
  * target="_parent">Laird Nelson</a>
  *
  * @see LiquibaseChangeLogArtifactsProcessor
+ *
+ * @see <a
+ * href="http://ljnelson.github.io/artifact-maven-plugin/apidocs/index.html"
+ * target="_parent">The documentation for the
+ * artifact-maven-plugin</a>
+ *
+ * @see <a href="http://www.liquibase.org/">The Liquibase homepage</a>
+ *
+ * @see <a
+ * href="http://www.liquibase.org/documentation/databasechangelog.html">Documentation
+ * relating to the Liquibase changelog file</a>
  */
 public class AggregateChangeLogGenerator {
 
@@ -108,6 +126,8 @@ public class AggregateChangeLogGenerator {
    * @see #setProperties(Properties)
    */
   private Properties properties;
+
+  private String characterSet;
 
   /**
    * Represents whether the aggregate changelog was actually
@@ -180,6 +200,25 @@ public class AggregateChangeLogGenerator {
    * Loads a notional resource with the given {@code name} from the
    * classpath.
    *
+   * <p>The default implementation invokes the {@link
+   * ClassLoader#getResource(String)} method on the supplied {@link
+   * String} using, in order:</p>
+   *
+   * <ol>
+   *
+   * <li>the {@linkplain Thread#getContextClassLoader() context
+   * <code>ClassLoader</code>}</li>
+   *
+   * <li>this {@linkplain Class#getClassLoader() class'
+   * <code>ClassLoader</code>}</li>
+   *
+   * </ol>
+   *
+   * <p>The first of these {@link ClassLoader}s to return a non-{@code
+   * null} value will have its result returned.  Otherwise, the return
+   * value of {@link ClassLoader#getSystemResource(String)} is
+   * returned.</p>
+   *
    * @param name the name of the resource to load; may be {@code null}
    * in which case {@code null} will be returned
    *
@@ -248,16 +287,31 @@ public class AggregateChangeLogGenerator {
     this.properties = properties;
   }
 
+  public String getCharacterSet() {
+    if (this.characterSet == null) {
+      return "UTF-8";
+    } else {
+      return this.characterSet;
+    }
+  }
+
+  public void setCharacterSet(final String characterSet) {
+    this.characterSet = characterSet;
+  }
+
   /**
-   * Returns the source code of an MVEL template that represents the
-   * skeleton of a Liquibase changelog into which will be placed
-   * {@code <include>} elements.
+   * Returns the source code of an <a
+   * href="http://mvel.codehaus.org/MVEL+2.0+Templating+Guide">MVEL
+   * template</a> that represents the skeleton of a Liquibase
+   * changelog into which will be placed {@code <include>} elements.
    *
    * <p>This method will not return {@code null} and overrides of it
    * must not either.</p>
    *
    * @return a non-{@code null} {@link String} containing the source
-   * code of an MVEL template
+   * code of an <a
+   * href="http://mvel.codehaus.org/MVEL+2.0+Templating+Guide">MVEL
+   * template</a>
    */
   public String getTemplate() {
     if (this.template == null) {
@@ -268,7 +322,11 @@ public class AggregateChangeLogGenerator {
         try {
           stream = templateURL.openStream();
           if (stream != null) {
-            reader = new BufferedReader(new InputStreamReader(stream)); // TODO: charset?
+            String characterSet = this.getCharacterSet();
+            if (characterSet == null) {
+              characterSet = "UTF-8";
+            }
+            reader = new BufferedReader(new InputStreamReader(stream, characterSet));
             String line = null;
             final StringBuilder sb = new StringBuilder();
             while ((line = reader.readLine()) != null) {
@@ -318,9 +376,7 @@ public class AggregateChangeLogGenerator {
     }
     this.template = template;
     this.compiledTemplate = null;
-    if (template != null) {
-      this.compiledTemplate = TemplateCompiler.compileTemplate(template);
-    }
+    this.compiledTemplate = TemplateCompiler.compileTemplate(template);
   }
 
   /**
@@ -439,7 +495,11 @@ public class AggregateChangeLogGenerator {
     if (aggregateChangeLogFile != null && changeLogContents != null) {
       BufferedWriter writer = null;
       try {
-        writer = new BufferedWriter(new FileWriter(aggregateChangeLogFile)); // TODO: charset?
+        String characterSet = this.getCharacterSet();
+        if (characterSet == null) {
+          characterSet = "UTF-8";
+        }
+        writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(aggregateChangeLogFile), characterSet));
         writer.write(changeLogContents, 0, changeLogContents.length());
         writer.flush();
       } finally {

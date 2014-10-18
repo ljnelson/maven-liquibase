@@ -27,8 +27,9 @@
  */
 
 /**
- * Provides classes and interfaces for working with Liquibase in
- * Maven-centric contexts.
+ * Provides classes and interfaces for working with <a
+ * href="http://www.liquibase.org/">Liquibase</a> in <a
+ * href="http://maven.apache.org/">Maven</a>-centric contexts.
  *
  * @author <a href="http://about.me/lairdnelson"
  * target="_parent">Laird Nelson</a>

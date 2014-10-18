@@ -51,12 +51,20 @@ import org.apache.maven.project.MavenProject;
 
 /**
  * An {@link ArtifactsProcessor} for use in conjunction with the
- * <code>artifact-maven-plugin</code> that creates a Liquibase
- * changelog aggregating changelog fragments found in a {@link
- * MavenProject}'s dependencies.
+ * <code>artifact-maven-plugin</code> that creates a <a
+ * href="http://www.liquibase.org/">Liquibase</a> <a
+ * href="http://www.liquibase.org/documentation/databasechangelog.html">changelog</a>
+ * <a
+ * href="http://www.liquibase.org/documentation/include.html">aggregating</a>
+ * changelog fragments found in a {@link MavenProject}'s dependencies.
  *
  * @author <a href="http://about.me/lairdnelson"
  * target="_parent">Laird Nelson</a>
+ *
+ * @see <a
+ * href="http://ljnelson.github.io/artifact-maven-plugin/apidocs/index.html"
+ * target="_parent">The documentation for the
+ * artifact-maven-plugin</a>
  */
 public class LiquibaseChangeLogArtifactsProcessor implements ArtifactsProcessor {
 
