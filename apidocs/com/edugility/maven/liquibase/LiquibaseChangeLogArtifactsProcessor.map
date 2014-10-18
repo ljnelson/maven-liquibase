@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./LiquibaseChangeLogArtifactsProcessor.html" title="com.edugility.maven.liquibase.LiquibaseChangeLogArtifactsProcessor" alt="" coords="231,161,747,314"/>
+<area shape="rect" id="node1" href="./LiquibaseChangeLogArtifactsProcessor.html" title="&lt;TABLE&gt;" alt="" coords="221,155,758,319"/>
+<area shape="rect" id="node2_1" href="./AggregateChangeLogGenerator.html" title="com.edugility.maven.liquibase.AggregateChangeLogGenerator" alt="" coords="320,374,659,655"/>
+<area shape="rect" id="node2" href="./AggregateChangeLogGenerator.html" title="&lt;TABLE&gt;" alt="" coords="309,369,669,661"/>
+<area shape="rect" id="node3_2" href="http://ljnelson.github.io/artifact-maven-plugin/apidocs/com/edugility/maven/ArtifactsProcessor.html" title="com.edugility.maven.ArtifactsProcessor" alt="" coords="15,11,963,101"/>
+<area shape="rect" id="node3" href="http://ljnelson.github.io/artifact-maven-plugin/apidocs/com/edugility/maven/ArtifactsProcessor.html" title="&lt;TABLE&gt;" alt="" coords="5,6,974,106"/>
+</map>
