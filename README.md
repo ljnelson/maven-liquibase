@@ -43,6 +43,12 @@ automatically assembled for you at `process-test-resources` time:
       </executions>
     </plugin>
 
+Regarding configuration of all the pieces, make sure you fully understand
+[how to configure Maven plugins, including how to specify complex objects][3].
+Then see the
+[javadoc for the `LiquibaseChangeLogArtifactsProcessor`][2] and the
+[javadoc for the `AggregateChangeLogGenerator`][1].
+
 ## See Also ##
 
  * The
@@ -52,4 +58,8 @@ automatically assembled for you at `process-test-resources` time:
    [`liquibase-extensions`](http://ljnelson.github.io/liquibase-extensions)
    project.
  * Maven's
-   [guide to configuring plugins](http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Mapping_Complex_Objects).
+   [guide to configuring plugins][3].
+
+[1]: http://ljnelson.github.io/maven-liquibase/apidocs/com/edugility/maven/liquibase/AggregateChangeLogGenerator.html
+[2]: http://ljnelson.github.io/maven-liquibase/apidocs/com/edugility/maven/liquibase/LiquibaseChangeLogArtifactsProcessor.html
+[3]: http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Mapping_Complex_Objects
