@@ -49,6 +49,11 @@ Then see the
 [javadoc for the `LiquibaseChangeLogArtifactsProcessor`][2] and the
 [javadoc for the `AggregateChangeLogGenerator`][1].
 
+Then, once you have this `changelog.xml` in place, you'll need to run
+it in your unit or integration tests.  Currently that's an exercise
+left to the reader.  To do this, you'll need a `ResourceAccessor` that
+can read URLs.  For that, see the [liquibase-extensions project][4].
+
 ## See Also ##
 
  * The
@@ -63,3 +68,4 @@ Then see the
 [1]: http://ljnelson.github.io/maven-liquibase/apidocs/com/edugility/maven/liquibase/AggregateChangeLogGenerator.html
 [2]: http://ljnelson.github.io/maven-liquibase/apidocs/com/edugility/maven/liquibase/LiquibaseChangeLogArtifactsProcessor.html
 [3]: http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Mapping_Complex_Objects
+[4]: http://ljnelson.github.io/liquibase-extensions/apidocs/index.html
