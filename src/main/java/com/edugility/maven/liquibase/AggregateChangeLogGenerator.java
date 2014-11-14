@@ -161,7 +161,7 @@ public class AggregateChangeLogGenerator {
    */
   public AggregateChangeLogGenerator() {
     super();
-    this.setDatabaseChangeLogXsdVersion("3.2");
+    this.setDatabaseChangeLogXsdVersion("3.3");
   }
 
   /**
@@ -169,9 +169,9 @@ public class AggregateChangeLogGenerator {
    * generated.
    *
    * <p>This method may return {@code null} in which case "{@code
-   * 3.2}" will be used internally instead.</p>
+   * 3.3}" will be used internally instead.</p>
    *
-   * <p>By default, "{@code 3.2}" is returned, and this default value
+   * <p>By default, "{@code 3.3}" is returned, and this default value
    * will change when Liquibase is updated and this project is updated
    * to depend on it.</p>
    *

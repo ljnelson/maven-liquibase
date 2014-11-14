@@ -1,0 +1,17 @@
+<!-- -*- markdown -*- -->
+# Introduction
+
+Welcome to the `${project.artifactId}` project.
+`${project.artifactId}` provides classes and interfaces for use with
+the [`artifact-maven-plugin`][1] project to assist with generating
+[Liquibase][2] [changelogs][3].
+
+# API Documentation
+
+The API is fully documented.  Please see the [API documentation][4] to
+get started.
+
+[1]: http://ljnelson.github.io/artifact-maven-plugin/index.html
+[2]: http://www.liquibase.org/
+[3]: http://www.liquibase.org/documentation/databaseChangeLog
+[4]: apidocs/index.html

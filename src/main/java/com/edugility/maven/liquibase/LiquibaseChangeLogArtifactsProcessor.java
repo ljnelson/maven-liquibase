@@ -50,9 +50,9 @@ import org.apache.maven.model.Build;
 import org.apache.maven.project.MavenProject;
 
 /**
- * An {@link ArtifactsProcessor} for use in conjunction with the
- * <code>artifact-maven-plugin</code> that creates a <a
- * href="http://www.liquibase.org/">Liquibase</a> <a
+ * An {@link ArtifactsProcessor} for use in conjunction with the <a
+ * href="http://ljnelson.github.io/artifact-maven-plugin/index.html"><code>artifact-maven-plugin</code></a>
+ * that creates a <a href="http://www.liquibase.org/">Liquibase</a> <a
  * href="http://www.liquibase.org/documentation/databasechangelog.html">changelog</a>
  * <a
  * href="http://www.liquibase.org/documentation/include.html">aggregating</a>
