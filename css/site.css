@@ -1,1 +1,7 @@
-/* You can override this file with your own styles */
+#bannerLeft h2 {
+    font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+footer {
+    font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
