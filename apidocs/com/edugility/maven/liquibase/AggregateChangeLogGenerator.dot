@@ -56,7 +56,7 @@ digraph G {
 	// com.edugility.maven.liquibase.AggregateChangeLogGenerator NAVASSOC org.mvel2.templates.CompiledTemplate
 	c10:p -> c13:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// org.mvel2.templates.CompiledTemplate
-	c13 [label=<<table title="org.mvel2.templates.CompiledTemplate" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://mvel.codehaus.org/javadoc/2.0/org/mvel2/templates/CompiledTemplate.html">
+	c13 [label=<<table title="org.mvel2.templates.CompiledTemplate" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> org.mvel2.templates.CompiledTemplate </td></tr>
 		</table></td></tr>
@@ -70,6 +70,6 @@ digraph G {
 <tr><td align="left" balign="left"> + getRoot() : org.mvel2.templates.res.Node </td></tr>
 <tr><td align="left" balign="left"> + setRoot(arg0 : org.mvel2.templates.res.Node) </td></tr>
 		</table></td></tr>
-		</table>>, URL="http://mvel.codehaus.org/javadoc/2.0/org/mvel2/templates/CompiledTemplate.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
+		</table>>, URL="null", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 }
 
