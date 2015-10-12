@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.edugility</groupId>
     <artifactId>edugility-oss-pluginmanagement-pom</artifactId>
-    <version>6</version>
+    <version>14</version>
   </parent>
 
   <name>Maven Liquibase Utilities</name>
@@ -34,7 +34,7 @@
       <dependency>
         <groupId>com.edugility</groupId>
         <artifactId>artifact-maven-plugin</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
       </dependency>
 
       <dependency>
@@ -265,7 +265,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.2</version>
         <configuration>
           <excludeFilterFile>${basedir}/src/findbugs/exclude.xml</excludeFilterFile>
         </configuration>
